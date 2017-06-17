@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="58457974-95ab-4188-8379-d7c1def0d612" activeEnvironment="Default" name="jaxws-schema-validation" resourceRoot="" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="d72b9529-a917-4f44-8a5d-fd778592becc" wsaVersion="NONE" name="RegistrationServicePortBinding" type="wsdl" bindingName="{http://hellojaxws.example.com/}RegistrationServicePortBinding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/Don/dev/other_projects/jaxws-schema-validation/src/main/resources/hello.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/C:/Users/Don/dev/other_projects/jaxws-schema-validation/src/main/resources/hello.wsdl"><con:part><con:url>file:/C:/Users/Don/dev/other_projects/jaxws-schema-validation/src/main/resources/hello.wsdl</con:url><con:content><![CDATA[<definitions targetNamespace="http://hellojaxws.example.com/" name="GreetingService" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://hellojaxws.example.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/">
+<con:soapui-project id="58457974-95ab-4188-8379-d7c1def0d612" activeEnvironment="Default" name="jaxws-schema-validation" resourceRoot="" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="a14f548d-73a8-433a-9a4a-5f6a0ae3beef" wsaVersion="NONE" name="RegistrationServicePortBinding" type="wsdl" bindingName="{http://registrationservice.example.com/}RegistrationServicePortBinding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/Don/dev/other_projects/jaxws-schema-validation/src/main/resources/registration.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/C:/Users/Don/dev/other_projects/jaxws-schema-validation/src/main/resources/registration.wsdl"><con:part><con:url>file:/C:/Users/Don/dev/other_projects/jaxws-schema-validation/src/main/resources/registration.wsdl</con:url><con:content><![CDATA[<definitions targetNamespace="http://registrationservice.example.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://registrationservice.example.com/" xmlns:rns="http://registration.example.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/">
   <types>
     <xsd:schema>
-      <xsd:import namespace="http://hellojaxws.example.com/" schemaLocation="hello.xsd"/>
+      <xsd:import namespace="http://registration.example.com/" schemaLocation="registration.xsd"/>
     </xsd:schema>
   </types>
   <message name="registration">
-    <part name="parameters" element="tns:registration"/>
+    <part name="parameters" element="rns:registration"/>
   </message>
   <message name="registrationResponse">
-    <part name="parameters" element="tns:registrationResponse"/>
+    <part name="parameters" element="rns:registrationResponse"/>
   </message>
   <portType name="RegistrationService">
     <operation name="register">
@@ -31,10 +31,10 @@
   </binding>
   <service name="RegistrationService">
     <port name="RegistrationServicePort" binding="tns:RegistrationServicePortBinding">
-      <soap:address location="http://localhost:8080/hello"/>
+      <soap:address location="http://localhost:8080/register"/>
     </port>
   </service>
-</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:\C:\Users\Don\dev\other_projects\jaxws-schema-validation\src\main\resources\hello.xsd</con:url><con:content><![CDATA[<schema version="1.0" targetNamespace="http://hellojaxws.example.com/" xmlns:tns="http://hellojaxws.example.com/" xmlns="http://www.w3.org/2001/XMLSchema">
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:\C:\Users\Don\dev\other_projects\jaxws-schema-validation\src\main\resources\registration.xsd</con:url><con:content><![CDATA[<schema version="1.0" targetNamespace="http://registration.example.com/" xmlns:tns="http://registration.example.com/" xmlns="http://www.w3.org/2001/XMLSchema">
   <element name="registration" type="tns:registration"/>
   <element name="registrationResponse" type="tns:registrationResponse"/>
   <complexType name="registration">
@@ -56,15 +56,16 @@
       <element name="message" type="string" minOccurs="0"/>
     </sequence>
   </complexType>
-</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/hello</con:endpoint></con:endpoints><con:operation id="e6fa11f7-b559-4d5d-ae9f-f6459728b5ab" isOneWay="false" action="" name="register" bindingOperationName="register" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="51f1d92f-e511-4bcd-baaf-708d26758def" name="Full Request"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/register</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:hel="http://registration.example.com/">\r
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/register</con:endpoint></con:endpoints><con:operation id="1f3fe6e1-369b-42c5-87b7-335aaa4c29f6" isOneWay="false" action="" name="register" bindingOperationName="register" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ca89eb4e-3433-413a-8700-1381547ce15a" name="FullRequest"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/register</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:reg="http://registration.example.com/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
-      <hel:registration>\r
+      <reg:registration>\r
+         <!--You may enter the following 5 items in any order-->\r
          <firstName>?</firstName>\r
          <lastName>?</lastName>\r
-         <sex>male</sex>\r
+         <sex>?</sex>\r
          <email>?</email>\r
          <phone>?</phone>\r
-      </hel:registration>\r
+      </reg:registration>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://hellojaxws.example.com/RegistrationService/registerRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://registrationservice.example.com/RegistrationService/registerRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
