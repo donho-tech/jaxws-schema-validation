@@ -4,7 +4,8 @@ import com.sun.xml.ws.developer.SchemaValidation;
 import org.springframework.stereotype.Component;
 
 import javax.jws.WebService;
-import javax.servlet.Registration;
+
+import static java.text.MessageFormat.format;
 
 @Component(value = "registrationService")
 @WebService(endpointInterface = "com.example.registration.RegistrationService",
@@ -15,9 +16,10 @@ import javax.servlet.Registration;
 public class RegistrationServiceImpl implements RegistrationService {
 
     @Override
-    public RegistrationResponse register(com.example.registration.Registration parameters) {
-        RegistrationResponse registrationResponse = new RegistrationResponse();
-        registrationResponse.setMessage("Registration successful.");
-        return registrationResponse;
+    public RegistrationResponse register(Registration reg) {
+        RegistrationResponse response = new RegistrationResponse();
+        response.setMessage(format("Registration successful. Registered: {0}, {1}",
+                reg.getLastName(), reg.getFirstName()));
+        return response;
     }
 }

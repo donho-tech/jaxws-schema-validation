@@ -60,12 +60,66 @@
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <reg:registration>\r
-         <!--You may enter the following 5 items in any order-->\r
-         <firstName>?</firstName>\r
-         <lastName>?</lastName>\r
-         <sex>?</sex>\r
-         <email>?</email>\r
-         <phone>?</phone>\r
+         <firstName>Hannibal</firstName>\r
+         <lastName>Lecter</lastName>\r
+         <sex>male</sex>\r
+         <email>hannibal@lecter.com</email>\r
+         <phone>0123456789</phone>\r
       </reg:registration>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://registrationservice.example.com/RegistrationService/registerRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://registrationservice.example.com/RegistrationService/registerRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="a35ca4eb-2361-4714-8e4c-85d38e6952f5" name="TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="1cebf165-5a1a-4b38-a3bf-b179da7ab3d8" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="ValidationTest" searchProperties="true"><con:settings/><con:testStep type="request" name="Full Request" id="ae91cc45-def4-4160-8ebb-d9c47dfa89b6"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>RegistrationServicePortBinding</con:interface><con:operation>register</con:operation><con:request name="Full Request" id="b0b42815-3efb-4af3-bfd6-30fabdb5ab1e"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/register</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:reg="http://registration.example.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <reg:registration>
+         <firstName>Hannibal</firstName>
+         <lastName>Lecter</lastName>
+         <sex>male</sex>
+         <email>hannibal@lecter.com</email>
+         <phone>0123456789</phone>
+      </reg:registration>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="1844849f-d529-40ae-8237-bd54bfcf2413"/><con:assertion type="Schema Compliance" id="48400777-a5bc-4392-b7fe-4b3a8acca9f5"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion" id="e7301805-b18b-422a-b0a3-f3623895a6c7"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="Invalid First Name" id="7f1c8ed9-5790-4d13-bfb5-b473685a2025"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>RegistrationServicePortBinding</con:interface><con:operation>register</con:operation><con:request name="Invalid First Name" id="a72a1a52-f107-471d-98ca-a1d02de25747"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/register</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:reg="http://registration.example.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <reg:registration>
+         <firstName>Hannibal</firstName>
+         <lastName>Lecter</lastName>
+         <sex>male</sex>
+         <email>invalid-email</email>
+         <phone>0123456789</phone>
+      </reg:registration>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="d9099077-23cb-4abf-bf80-2c71f0426e00"/><con:assertion type="Schema Compliance" id="90a598bb-0914-4232-be16-94970adc3af2"><con:configuration/></con:assertion><con:assertion type="Not SOAP Fault Assertion" id="c9436ec4-0736-4f8a-95e2-d5cc037e4565" name="SOAP Fault"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="Invalid Sex" id="aac72f99-174b-406c-b615-f1f6d4e1522e"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>RegistrationServicePortBinding</con:interface><con:operation>register</con:operation><con:request name="Invalid Sex" id="a72a1a52-f107-471d-98ca-a1d02de25747"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/register</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:reg="http://registration.example.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <reg:registration>
+         <firstName>Hannibal</firstName>
+         <lastName>Lecter</lastName>
+         <sex>male</sex>
+         <email>invalid-email</email>
+         <phone>0123456789</phone>
+      </reg:registration>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="d9099077-23cb-4abf-bf80-2c71f0426e00"/><con:assertion type="Schema Compliance" id="90a598bb-0914-4232-be16-94970adc3af2"><con:configuration/></con:assertion><con:assertion type="Not SOAP Fault Assertion" id="c9436ec4-0736-4f8a-95e2-d5cc037e4565" name="SOAP Fault"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="Invalid Email" id="d354aef4-06a9-48ad-aaf7-12d674a8c4dd"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>RegistrationServicePortBinding</con:interface><con:operation>register</con:operation><con:request name="Invalid Email" id="a72a1a52-f107-471d-98ca-a1d02de25747"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/register</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:reg="http://registration.example.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <reg:registration>
+         <firstName>Hannibal</firstName>
+         <lastName>Lecter</lastName>
+         <sex>cannibal</sex>
+         <email>Hannibal@Lecter.com</email>
+         <phone>0123456789</phone>
+      </reg:registration>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="d9099077-23cb-4abf-bf80-2c71f0426e00"/><con:assertion type="Schema Compliance" id="90a598bb-0914-4232-be16-94970adc3af2"><con:configuration/></con:assertion><con:assertion type="Not SOAP Fault Assertion" id="c9436ec4-0736-4f8a-95e2-d5cc037e4565" name="SOAP Fault"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="Invalid Phone" id="6160b1f4-5aa9-4393-8fb3-722c2ab2ff26"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>RegistrationServicePortBinding</con:interface><con:operation>register</con:operation><con:request name="Invalid Phone" id="a72a1a52-f107-471d-98ca-a1d02de25747"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/register</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:reg="http://registration.example.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <reg:registration>
+         <firstName>Hannibal</firstName>
+         <lastName>Lecter</lastName>
+         <sex>male</sex>
+         <email>Hannibal@Lecter.com</email>
+         <phone>invalid</phone>
+      </reg:registration>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="d9099077-23cb-4abf-bf80-2c71f0426e00"/><con:assertion type="Schema Compliance" id="90a598bb-0914-4232-be16-94970adc3af2"><con:configuration/></con:assertion><con:assertion type="Not SOAP Fault Assertion" id="c9436ec4-0736-4f8a-95e2-d5cc037e4565" name="SOAP Fault"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

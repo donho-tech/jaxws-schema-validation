@@ -6,17 +6,29 @@
 
     <complexType name="registration">
         <all>
-            <element name="firstName" type="string"/>
-            <element name="lastName" type="string"/>
+            <element name="firstName" type="tns:name"/>
+            <element name="lastName" type="tns:name"/>
             <element name="sex" type="tns:gender"/>
-            <element name="email" type="string"/>
-            <element name="phone" type="string"/>
+            <element name="email" type="tns:email"/>
+            <element name="phone" type="integer"/>
         </all>
     </complexType>
+
+    <simpleType name="name">
+        <restriction base="string">
+            <pattern value="([a-zA-Z])+"/>
+        </restriction>
+    </simpleType>
 
     <simpleType name="gender">
         <restriction base="string">
             <pattern value="male|female"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="email">
+        <restriction base="string">
+            <pattern value="([a-zA-Z])+@([a-zA-Z])+.([a-zA-Z])+"/>
         </restriction>
     </simpleType>
 
