@@ -1,0 +1,42 @@
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://registrationservice.example.com/"
+             xmlns:rns="http://registration.example.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://registrationservice.example.com/">
+    <types>
+        <xsd:schema>
+            <xsd:import namespace="http://registration.example.com/" schemaLocation="registration.xsd"/>
+        </xsd:schema>
+    </types>
+
+    <message name="registration">
+        <part name="parameters" element="rns:registration"/>
+    </message>
+    <message name="registrationResponse">
+        <part name="parameters" element="rns:registrationResponse"/>
+    </message>
+
+    <portType name="RegistrationService">
+        <operation name="register">
+            <input message="tns:registration"/>
+            <output message="tns:registrationResponse"/>
+        </operation>
+    </portType>
+
+    <binding name="RegistrationServicePortBinding" type="tns:RegistrationService">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <operation name="register">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+
+    <service name="RegistrationService">
+        <port name="RegistrationServicePort" binding="tns:RegistrationServicePortBinding">
+            <soap:address location="http://localhost:8080/register"/>
+        </port>
+    </service>
+</definitions>
