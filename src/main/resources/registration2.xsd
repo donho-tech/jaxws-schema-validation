@@ -1,0 +1,40 @@
+<schema xmlns:tns="http://v2.registration.example.com/" xmlns="http://www.w3.org/2001/XMLSchema" version="1.0"
+        targetNamespace="http://v2.registration.example.com/">
+
+    <element name="registration" type="tns:registration"/>
+    <element name="registrationResponse" type="tns:registrationResponse"/>
+
+    <complexType name="registration">
+        <all>
+            <element name="vorname" type="tns:name"/>
+            <element name="nachname" type="tns:name"/>
+            <element name="geschlecht" type="tns:gender"/>
+            <element name="email" type="tns:email"/>
+            <element name="telefonnummer" type="integer"/>
+        </all>
+    </complexType>
+
+    <simpleType name="name">
+        <restriction base="string">
+            <pattern value="([a-zA-Z])+"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="gender">
+        <restriction base="string">
+            <pattern value="male|female"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="email">
+        <restriction base="string">
+            <pattern value="([a-zA-Z])+@([a-zA-Z])+.([a-zA-Z])+"/>
+        </restriction>
+    </simpleType>
+
+    <complexType name="registrationResponse">
+        <sequence>
+            <element name="message" type="string" minOccurs="0"/>
+        </sequence>
+    </complexType>
+</schema>

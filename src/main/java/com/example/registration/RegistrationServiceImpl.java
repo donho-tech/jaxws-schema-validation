@@ -4,6 +4,10 @@ import com.sun.xml.ws.developer.SchemaValidation;
 import org.springframework.stereotype.Component;
 
 import javax.jws.WebService;
+import javax.xml.ws.AsyncHandler;
+import javax.xml.ws.Response;
+
+import java.util.concurrent.Future;
 
 import static java.text.MessageFormat.format;
 

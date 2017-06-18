@@ -16,5 +16,10 @@
             <ws:service bean="#registrationService"/>
         </wss:service>
     </wss:binding>
+    <wss:binding url="/register2">
+        <wss:service>
+            <ws:service bean="#registrationService2"/>
+        </wss:service>
+    </wss:binding>
 
 </beans>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jaxws:bindings xmlns:jaxws="http://java.sun.com/xml/ns/jaxws"
+                xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+                xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                wsdlLocation="registration.wsdl"
+                version="2.0">
+
+    <jaxws:package name="com.example.registration.v2"/>
+    <jaxws:enableWrapperStyle>false</jaxws:enableWrapperStyle>
+    <jaxws:enableAsyncMapping>false</jaxws:enableAsyncMapping>
+
+    <jaxws:bindings node="//wsdl:definitions/wsdl:types/xs:schema[@targetNamespace='reg2']">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.example.registration.v2"/>
+        </jaxb:schemaBindings>
+    </jaxws:bindings>
+
+</jaxws:bindings>

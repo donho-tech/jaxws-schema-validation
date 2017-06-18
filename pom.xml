@@ -61,7 +61,12 @@
                 <version>2.4.1</version>
                 <configuration>
                     <wsdlDirectory>src/main/resources</wsdlDirectory>
-                    <packageName>com.example.registration</packageName>
+                    <!--<packageName>com.example.registration</packageName>-->
+                    <bindingDirectory>src/main/resources</bindingDirectory>
+                    <bindingFiles>
+                        <bindingFile>bindings-registration.xml</bindingFile>
+                        <bindingFile>bindings-registration2.xml</bindingFile>
+                    </bindingFiles>
                     <keep>true</keep>
                     <sourceDestDir>target/generated-sources/wsimport</sourceDestDir>
                 </configuration>

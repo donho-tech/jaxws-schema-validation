@@ -17,6 +17,6 @@ public class Application {
 
     @Bean
     public ServletRegistrationBean servletRegistrationBean() {
-        return new ServletRegistrationBean(new WSSpringServlet(), "/register");
+        return new ServletRegistrationBean(new WSSpringServlet(), "/register", "/register2");
     }
 }
